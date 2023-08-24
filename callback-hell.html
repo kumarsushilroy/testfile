@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this is testing page</h1>
+    <script>
+      const first = (callback) => {
+        setTimeout(() => {
+          console.log("this is first function");
+          callback();
+        }, 1000);
+      };
+
+      const second = (callback) => {
+        setTimeout(() => {
+          console.log("this is second function");
+          callback();
+        }, 1000);
+      };
+
+      const third = (callback) => {
+        setTimeout(() => {
+          console.log("this is third function");
+          callback();
+        }, 3000);
+      };
+
+      const forth = () => {
+        setTimeout(() => {
+          console.log("this is forth function");
+        }, 1000);
+      };
+
+      first(() => {
+        second(() => {
+          third(() => {
+            forth();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
